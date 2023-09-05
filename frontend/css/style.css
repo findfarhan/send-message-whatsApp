@@ -1,0 +1,61 @@
+.section-b-space {
+  padding-bottom: 70px;
+}
+
+.section-t-space,
+section {
+  padding-top: 70px;
+}
+.register-page .h3,
+.register-page h3 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #222;
+  font-weight: 700;
+  margin-top: -5px;
+}
+.register-page .theme-card {
+  padding: 30px;
+  border: 1px solid #ddd;
+  line-height: 1;
+}
+
+.theme-card {
+  position: relative;
+}
+.register-page .theme-card .theme-form label {
+  text-transform: capitalize;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+.register-page .theme-card .theme-form input {
+  border-color: #ddd;
+  font-size: 12px;
+  padding: 17px 25px;
+  margin-bottom: 30px;
+  height: inherit;
+}
+.btn-solid {
+  padding: 13px 29px;
+  color: #fff !important;
+  letter-spacing: 0.05em;
+  border: 2px solid #3e5067;
+  border-color: #3e5067 !important;
+  background-image: linear-gradient(30deg, #3e5067 50%, transparent 50%);
+  background-size: 540px;
+  background-repeat: no-repeat;
+  background-position: 0;
+  transition: background 0.3s ease-in-out;
+}
+.btn1,
+.btn1:hover {
+  transition: 0.3s ease-in-out;
+}
+.btn1 {
+  line-height: 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 0;
+}
