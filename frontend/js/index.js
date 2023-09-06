@@ -15,6 +15,9 @@ document.getElementById('myform').addEventListener('submit', function (event) {
     phone_no: phone_no,
   };
 
+  // Show a loading message
+  displayAlert('Sending message...', 'info');
+
   // Make a POST request to the API
   fetch('http://localhost:8000/send/send-message', {
     method: 'POST',
@@ -26,14 +29,37 @@ document.getElementById('myform').addEventListener('submit', function (event) {
     .then((response) => {
       if (response.ok) {
         // Handle a successful response here
-        console.log('Delete request successful');
+        displayAlert('Message sent successfully!', 'success');
+        // Clear form fields
+        clearFormFields();
       } else {
         // Handle errors here
-        console.error('Delete request failed');
+        displayAlert(
+          'Failed to send message. Please try again later.',
+          'danger'
+        );
       }
     })
     .catch((error) => {
       // Handle network or other errors here
-      console.error('Error:', error);
+      displayAlert('Error: ' + error.message, 'danger');
     });
 });
+
+// Function to display an alert
+function displayAlert(message, type) {
+  const alertContainer = document.getElementById('alert-container');
+  const alertDiv = document.createElement('div');
+  alertDiv.classList.add('alert', 'alert-' + type);
+  alertDiv.textContent = message;
+  alertContainer.innerHTML = ''; // Clear previous alerts
+  alertContainer.appendChild(alertDiv);
+}
+
+// Function to clear form fields
+function clearFormFields() {
+  document.getElementById('url').value = '';
+  document.getElementById('phone_no').value = '';
+  document.getElementById('description').value = '';
+  document.getElementById('subject').value = '';
+}

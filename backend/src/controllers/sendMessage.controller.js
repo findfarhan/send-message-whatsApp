@@ -12,16 +12,21 @@ class sendMessageController extends baseController {
       this.sendMessageWhatsapp
     );
   }
+
   sendMessageWhatsapp = async (req, res, next) => {
     try {
-      const user = await this._sendMessage.sendMessageWhatsapp(req);
-
-      if (user) {
-        res.send('success', user, undefined);
-      }
+      const result = await this._sendMessage.sendMessageWhatsapp(req);
+      console.log('Message sent successfully');
+      res
+        .status(200)
+        .json({ message: 'Message sent successfully', data: result });
     } catch (error) {
+      console.error('Error:', error);
+
       next(error);
-      res.send('Error', error, undefined);
+      res
+        .status(500)
+        .json({ error: 'An error occurred while sending the message' });
     }
   };
 }
