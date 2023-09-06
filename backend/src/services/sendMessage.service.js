@@ -21,21 +21,20 @@ export class sendMessage {
       let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'https://ppy2p8.api.infobip.com/whatsapp/1/message/text',
+        url: 'https://8g5v61.api.infobip.com/whatsapp/1/message/text',
         headers: {
           'Content-Type': 'application/json',
           Authorization:
-            'App 19f91232cc563df6d5b7a458f7102471-bdae5769-d9b3-4df0-8631-f5a006ba5746',
+            'App 9ed9a7e695cbd9006dc307badaae20d0-47a0f19f-37c4-482e-919b-908729e6ec67',
         },
         data: data,
       };
 
       const response = await axios.request(config);
-      // console.log('Data:', response.data); // Log the response data
-      return response.data; // Return the response data
+      return response.data;
     } catch (error) {
       console.error('Error:', error);
-      throw error; // Rethrow the error to be handled in the controller
+      throw error;
     }
   }
 }
